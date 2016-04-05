@@ -1,0 +1,34 @@
+.v-center {
+    height: 50%;
+    width: 50%;
+    overflow: visible;
+    margin: auto;
+    position: absolute;
+    background: url('../img/slate.png');
+    top: 0; left: 0; bottom: 0; right: 0;
+}
+
+body{
+    background: url('../img/slate.png');
+    background-repeat: repeat;
+    font-family: Ubuntu;
+    max-height:1000px;
+}
+.wrapper {
+    background: url('../img/light-blue.jpg');
+    background-repeat: repeat
+}
+.container{
+    background: url('../img/slate.png');
+    background-repeat: repeat;
+}
+
+nav {
+    background: url('../img/brown.png');
+    background-repeat: repeat;
+}
+
+@font-face{
+    font-family: Ubunutu;
+    src: url('../fonts/Ubuntu-L.tff');
+}
