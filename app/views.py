@@ -61,6 +61,28 @@ def logout():
         response = jsonify({'status':'did not log out'})
     return response
     
+@app.route('/api/user/<userid>',methods=["GET"])
+def user(userid):
+    user = db.session.query(User).filter_by(id=userid).first()
+    if user:
+        response = jsonify({"error":"null","data":{'id':user.id,'firstname':user.first_name,'lastname':user.last_name,'username':user.username,'email':user.email,'addon':timeinfo(user.addon)},"message":"Success"})
+    else:
+        response = jsonify({"error":"1","data":{},'message':'did not retrieve user'})
+    return response
+    
+
+@app.route('/api/users',methods=["GET"])
+def users():
+    users = db.session.query(User).all()
+    userlist=[]
+    for user in users:
+        userlist.append({'id':user.id,'firstname':user.first_name,'lastname':user.last_name,'username':user.username,'email':user.email})
+    if (len(userlist)>0):
+        response = jsonify({"error":"null","data":{"users":userlist},"message":"Success"})
+    else:
+        response = jsonify({"error":"1","data":{},"message":"did not retrieve all users"})
+    return response
+    
 
 
 @app.route('/api/user/<userid>/wishlist',methods=["GET","POST"])
