@@ -1,6 +1,6 @@
 .v-center {
-    height: 50%;
-    width: 50%;
+    height: 75%;
+    width: 75%;
     overflow: visible;
     margin: auto;
     position: absolute;
@@ -8,10 +8,15 @@
     top: 0; left: 0; bottom: 0; right: 0;
 }
 
+.text-center{
+    color:White;
+    font-family: Helvetica;
+}
+
 body{
     background: url('../img/light-blue.png');
     background-repeat: repeat;
-    font-family: Ubuntu;
+    font-family: Helvetica;
     max-height:1000px;
 }
 .wrapper {
@@ -28,7 +33,7 @@ nav {
     background-repeat: repeat;
 }
 
-@font-face{
+/**@font-face{
     font-family: Ubunutu;
     src: url('../fonts/Ubuntu-L.tff');
-}
+}**/
