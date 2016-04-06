@@ -31,6 +31,7 @@ body{
 .container{
     background: url('../img/light-blue.png');
     background-repeat: repeat;
+    height:100vh;
 }
 
 nav {
