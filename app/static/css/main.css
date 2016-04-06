@@ -5,6 +5,7 @@
     margin: auto;
     position: absolute;
     background: url('../img/light-blue.png');
+    background-repeat: repeat;
     top: 0; left: 0; bottom: 0; right: 0;
 }
 
@@ -25,7 +26,7 @@ body{
 }
 .wrapper {
     background: url('../img/slate.png');
-    background-repeat: repeat
+    background-repeat: repeat;
 }
 .container{
     background: url('../img/light-blue.png');
