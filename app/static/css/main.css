@@ -13,6 +13,10 @@
     font-family: Helvetica;
 }
 
+.btn{
+    color:#C8AD7F;
+}
+
 body{
     background: url('../img/light-blue.png');
     background-repeat: repeat;
