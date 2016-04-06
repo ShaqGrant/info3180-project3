@@ -35,9 +35,11 @@ body{
 nav {
     background: url('../img/brown.png');
     background-repeat: repeat;
-    color: White;
 }
 
+.nav{
+    color:white;
+}
 /**@font-face{
     font-family: Ubunutu;
     src: url('../fonts/Ubuntu-L.tff');
