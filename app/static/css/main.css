@@ -6,7 +6,7 @@
     position: absolute;
     background: url('../img/light-blue.png');
     background-repeat: repeat;
-    top: 300; left: 0; bottom: 0; right: 0;
+    top: 0; left: 0; bottom: 0; right: 0;
 }
 
 .text-center{
