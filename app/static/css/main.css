@@ -1,12 +1,12 @@
 .v-center {
     height: 100vh;
-    width: 75%;
+    width: 100vh;
     overflow: visible;
     margin: auto;
     position: absolute;
     background: url('../img/light-blue.png');
     background-repeat: repeat;
-    top: 0; left: 0; bottom: 0; right: 0;
+    top: 300; left: 0; bottom: 0; right: 0;
 }
 
 .text-center{
