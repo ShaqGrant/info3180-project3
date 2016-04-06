@@ -1,9 +1,9 @@
 .v-center {
     height: 50%;
     width: 50%;
-    overflow: vislateible;
+    overflow: visible;
     margin: auto;
-    poslateition: abslateolute;
+    position: absolute;
     background: url('../img/light-blue.png');
     top: 0; left: 0; bottom: 0; right: 0;
 }
@@ -30,5 +30,5 @@ nav {
 
 @font-face{
     font-family: Ubunutu;
-    slaterc: url('../fontslate/Ubuntu-L.tff');
+    src: url('../fonts/Ubuntu-L.tff');
 }
