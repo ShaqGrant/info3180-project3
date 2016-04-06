@@ -38,6 +38,13 @@ nav {
     background-repeat: repeat;
 }
 
+.panel-heading{
+    font-weight: bold;
+}
+
+.form-group{
+    color:white;
+}
 
 /**@font-face{
     font-family: Ubunutu;
