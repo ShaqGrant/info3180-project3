@@ -1,25 +1,25 @@
 .v-center {
     height: 50%;
     width: 50%;
-    overflow: visible;
+    overflow: vislateible;
     margin: auto;
-    position: absolute;
-    background: url('../img/slate.png');
+    poslateition: abslateolute;
+    background: url('../img/light-blue.png');
     top: 0; left: 0; bottom: 0; right: 0;
 }
 
 body{
-    background: url('../img/slate.png');
+    background: url('../img/light-blue.png');
     background-repeat: repeat;
     font-family: Ubuntu;
     max-height:1000px;
 }
 .wrapper {
-    background: url('../img/light-blue.png');
+    background: url('../img/slate.png');
     background-repeat: repeat
 }
 .container{
-    background: url('../img/slate.png');
+    background: url('../img/light-blue.png');
     background-repeat: repeat;
 }
 
@@ -30,5 +30,5 @@ nav {
 
 @font-face{
     font-family: Ubunutu;
-    src: url('../fonts/Ubuntu-L.tff');
+    slaterc: url('../fontslate/Ubuntu-L.tff');
 }

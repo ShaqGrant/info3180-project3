@@ -14,13 +14,13 @@ import bcrypt
 import urlparse
 import urllib
 
-#Landing page
+
 @app.route('/')
 def index():
     """Render website's home page."""
     return app.send_static_file('index.html')
     
-#Sign up page
+
 @app.route('/api/user/register', methods=['POST'])
 def signup():
     json_data = json.loads(request.data)
@@ -34,7 +34,7 @@ def signup():
         response = jsonify({"error":"1","data":{},'message':'not signed up'})
     return response
 
-#Log in page for a registered user
+
 @app.route('/api/user/login', methods=["POST"])
 def login():
     json_data = json.loads(request.data)
@@ -48,7 +48,7 @@ def login():
         response = jsonify({"error":"1","data":{},"message":'not logged'})
     return response
 
-#Log out a user
+
 @app.route('/api/user/logout',methods=["POST"])
 def logout():
     json_data = json.loads(request.data)
@@ -110,7 +110,7 @@ def wishes(userid):
             response = jsonify({"error":"1", "data":{},'message':'did not create wish'})
         return response
 
-#Used in image search on new wishes
+
 
 @app.route('/api/thumbnail/process', methods=['GET'])
 def get_images():
@@ -133,7 +133,7 @@ def get_images():
         response = jsonify({'error':'1','data':{},'message':'Unable to extract thumbnails'})
     return response
             
-#Used for time added on items
+
 def timeinfo(entry):
     day = time.strftime("%a")
     date = time.strftime("%d")
@@ -150,6 +150,6 @@ def after_request(response):
     response.headers.add('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE')
     return response
   
-#Runs application
+
 if __name__ == '__main__':
     app.run(debug=True,host="0.0.0.0",port="8888")
