@@ -45,7 +45,10 @@ nav {
 .form-group{
     color:white;
 }
-
+.col-lg-12{
+    background: url('../img/light-blue.png');
+    background-repeat: repeat;
+}
 /**@font-face{
     font-family: Ubunutu;
     src: url('../fonts/Ubuntu-L.tff');
