@@ -163,8 +163,8 @@ def send(userid):
     msg.attach(MIMEText('Their Wishlist: '+ allWishes,'plain'))
     msg.attach(MIMEText(footer,'plain'))
     messageToSend = msg.as_string()
-    username = 'Admin@WishListApp'
-    password = 'Admin'
+    username = 'shaq.grant.95@gmail.com'
+    password = 'jamaica.c.'
     server = smtplib.SMTP('smtp.gmail.com:587')
     server.starttls()
     server.login(username,password)
