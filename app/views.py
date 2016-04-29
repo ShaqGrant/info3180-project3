@@ -132,7 +132,44 @@ def get_images():
     else:
         response = jsonify({'error':'1','data':{},'message':'Unable to extract thumbnails'})
     return response
-            
+
+@app.route('/api/send/<userid>',methods=['POST'])
+def send(userid):
+    user = db.session.query(User).filter_by(id=userid).first()
+    json_data = json.loads(request.data)
+    fromaddr = str(user.email)
+    sender = str(user.first_name) + " " + str(user.last_name)
+    emails = json_data.get('emails')
+    message = json_data.get('message')
+    subject = json_data.get('subject')
+    wishes = json_data.get('wishes')
+    wishlist = []
+    for wish in wishes:
+        wishlist.append(str(wish))
+    allWishes = ", ".join(str(wish) for wish in wishlist)
+    msg = MIMEMultipart()
+    emaillist = []
+    for email in emails:
+        emaillist.append(str(email))
+    msg['From'] = fromaddr
+    msg['To'] = ", ".join(emaillist)
+    msg['Subject'] = subject
+    header = "Good Day, this is an email from " + sender + " <" + fromaddr + "> " + "to you about their wishlist. This is the attached message: "
+    footer = "You can view this wishlist, among others, by searching for their name at this link: https://secret-woodland-46593.herokuapp.com (Login is required)"
+    msg.attach(MIMEText(header,'plain'))
+    msg.attach(MIMEText(message,'plain'))
+    msg.attach(MIMEText('Their Wishlist: '+ allWishes,'plain'))
+    msg.attach(MIMEText(footer,'plain'))
+    messageToSend = msg.as_string()
+    username = 'shaq.grant.95@gmail.com'
+    password = ''
+    server = smtplib.SMTP('smtp.gmail.com:587')
+    server.starttls()
+    server.login(username,password)
+    server.sendmail(sender,emaillist,messageToSend)
+    server.quit()
+    response = jsonify({"error":"null","data":{"emails":emaillist,"subject":subject,"message":message,"wishes":allWishes},"message":"Success"})
+    return response            
 
 def timeinfo(entry):
     day = time.strftime("%a")
