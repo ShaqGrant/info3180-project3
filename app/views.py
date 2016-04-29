@@ -13,6 +13,9 @@ import BeautifulSoup
 import bcrypt
 import urlparse
 import urllib
+import smtplib
+from email.mime.multipart import MIMEMultipart
+from email.mime.text import MIMEText
 
 
 @app.route('/')
@@ -160,8 +163,8 @@ def send(userid):
     msg.attach(MIMEText('Their Wishlist: '+ allWishes,'plain'))
     msg.attach(MIMEText(footer,'plain'))
     messageToSend = msg.as_string()
-    username = 'shaq.grant.95@gmail.com'
-    password = 'jamaica.c.'
+    username = 'Admin@WishListApp'
+    password = 'Admin'
     server = smtplib.SMTP('smtp.gmail.com:587')
     server.starttls()
     server.login(username,password)
