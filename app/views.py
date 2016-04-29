@@ -25,7 +25,6 @@ def index():
 def signup():
     json_data = json.loads(request.data)
     user = User(json_data.get('firstname'), json_data.get('lastname'), json_data.get('username'),bcrypt.hashpw(json_data.get('password').encode('utf-8'), bcrypt.gensalt()),json_data.get('email'),datetime.now())
-    print user
     if user:
         db.session.add(user)
         db.session.commit()
@@ -94,7 +93,7 @@ def wishes(userid):
         for wish in wishes:
             wishlist.append({'title':wish.name,'url':wish.url,'thumbnail':wish.thumbnail,'description':wish.description,'addon':timeinfo(wish.addon)})
         if(len(wishlist)>0):
-            response = jsonify({"error":"null","data":{"wishes":wishlist},"message":"Success"})
+            response = jsonify({"error":"null","data":{"user":user.first_name + " " + user.last_name, "wishes":wishlist},"message":"Success"})
         else:
             response = jsonify({"error":"1","data":{},"message":"Unable to get wishes"})
         return response
@@ -162,7 +161,7 @@ def send(userid):
     msg.attach(MIMEText(footer,'plain'))
     messageToSend = msg.as_string()
     username = 'shaq.grant.95@gmail.com'
-    password = 'ysaervecmejltckw'
+    password = 'xmwurbtpkkrrlhya'
     server = smtplib.SMTP('smtp.gmail.com:587')
     server.starttls()
     server.login(username,password)
