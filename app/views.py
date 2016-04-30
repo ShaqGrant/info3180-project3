@@ -165,7 +165,7 @@ def send(userid):
     messageToSend = msg.as_string()
     # username = 'xmwurbtpkkrrlhya'
     username = 'wishlist.app.2016@gmail.com'
-    password = 'wishlistapp'
+    password = 'rdolqxsrrqjnvtek'
     server = smtplib.SMTP('smtp.gmail.com:587')
     server.starttls()
     server.login(username,password)
