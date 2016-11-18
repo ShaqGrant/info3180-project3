@@ -1,6 +1,8 @@
-Info3180-Project4 Wishlist App
+Info3180-Project 3 & 4 Wishlist App
 ==================================
-(renamed from Info3180-Project3)
 
-Web application created with Flask and AngularJS.
+A Wishlist Web application created with Flask and AngularJS.
+**[Make a wish!](secret-woodland-46593.herokuapp.com)**
+
+![Screenshot](http://i.imgur.com/74QuYsg.png)
 
